@@ -8,6 +8,7 @@ public class Bunny : MonoBehaviour
 {
     private Rigidbody2D RB;
     private float speed = 5.0f;
+    private static Vector2 target = Vector2.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class Bunny : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        target = Movement(target);
     }
 
     void OnMouseDown()
@@ -26,24 +27,28 @@ public class Bunny : MonoBehaviour
 
     }
 
-    void Movement()
+    Vector2 Movement(Vector2 target)
     {
-        Vector2 bunnyPos = Vector2.zero;
+        Vector2 bunnyPos = (Vector2)gameObject.transform.position;
         Vector2 mousePos = Vector2.zero;
-        Vector2 target = mousePos;
+        bunnyPos = (Vector2)gameObject.transform.position;
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            bunnyPos = gameObject.transform.position;
-            RB.velocity = (mousePos - bunnyPos).normalized * speed;
-        }
-        else { return; }
-        if ((Math.Abs(target.x - ((Vector2)gameObject.transform.position).x) < 1) && (Math.Abs(target.y - ((Vector2)gameObject.transform.position).y) < 1))
+        //if bunney reached its destination - stop.
+        if ((Math.Abs(target.x - bunnyPos.x) < 0.2) && (Math.Abs(target.y - bunnyPos.y) < 0.2))
         {
             RB.velocity = Vector2.zero;
         }
-        target = mousePos;
-        Debug.Log("bunnyPos = " + bunnyPos + ", mousePos = " + mousePos + ", target = " + target);
+
+        //if player clicks on screan - bunney moves towards where the player clicked.
+        if (Input.GetMouseButtonDown(0))
+        {
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            bunnyPos = (Vector2)gameObject.transform.position;
+            RB.velocity = (mousePos - bunnyPos).normalized * speed;
+            target = mousePos;
+        }
+
+        //Debug.Log("bunnyPos = " + bunnyPos + ", mousePos = " + mousePos + ", target = " + target);
+        return target;
     }
 }
