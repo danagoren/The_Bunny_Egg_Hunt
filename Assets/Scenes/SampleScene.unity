@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 199855360}
   - component: {fileID: 199855359}
   - component: {fileID: 199855362}
-  - component: {fileID: 199855363}
   - component: {fileID: 199855364}
+  - component: {fileID: 199855365}
   m_Layer: 0
   m_Name: Bunny
   m_TagString: Bunny
@@ -216,7 +216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199855358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.55, y: -1.26, z: 0}
+  m_LocalPosition: {x: -2.13, y: -2.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -250,24 +250,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &199855363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199855358}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097b551f2844b054290f18a39bf892e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Solvers:
-  - {fileID: 0}
-  m_Weight: 1
-  m_SolverEditorData:
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    showGizmo: 1
 --- !u!61 &199855364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -313,6 +295,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.92, y: 3.6}
   m_EdgeRadius: 0
+--- !u!114 &199855365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199855358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea486f604482df94e830963fddfa541a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &446833223
 GameObject:
   m_ObjectHideFlags: 0

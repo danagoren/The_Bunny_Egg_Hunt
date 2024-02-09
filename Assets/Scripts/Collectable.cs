@@ -31,7 +31,7 @@ public class Collectable : MonoBehaviour
         }
         if (gameObject.CompareTag("EasterEgg"))
         {
-            GameManager.AddEasterEgg(1); //give the function a number that represents the easter egg's type
+            GameManager.AddEasterEgg(); //give the function a number that represents the easter egg's type
             gameObject.SetActive(false);
         }
     }

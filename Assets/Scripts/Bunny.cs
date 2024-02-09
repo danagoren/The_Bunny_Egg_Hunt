@@ -31,7 +31,6 @@ public class Bunny : MonoBehaviour
     {
         Vector2 bunnyPos = (Vector2)gameObject.transform.position;
         Vector2 mousePos = Vector2.zero;
-        bunnyPos = (Vector2)gameObject.transform.position;
 
         //if bunney reached its destination - stop.
         if ((Math.Abs(target.x - bunnyPos.x) < 0.2) && (Math.Abs(target.y - bunnyPos.y) < 0.2))
@@ -42,7 +41,7 @@ public class Bunny : MonoBehaviour
         //if player clicks on screan - bunney moves towards where the player clicked.
         if (Input.GetMouseButtonDown(0))
         {
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos = AdjustPos(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             bunnyPos = (Vector2)gameObject.transform.position;
             RB.velocity = (mousePos - bunnyPos).normalized * speed;
             target = mousePos;
@@ -50,5 +49,11 @@ public class Bunny : MonoBehaviour
 
         //Debug.Log("bunnyPos = " + bunnyPos + ", mousePos = " + mousePos + ", target = " + target);
         return target;
+    }
+
+    Vector2 AdjustPos (Vector2 Pos)
+    {
+        Pos.y += 1.4f;
+        return Pos;
     }
 }
