@@ -26,12 +26,10 @@ public class Collectable : MonoBehaviour
         {
             GameManager.AddGoldenEgg();
             gameObject.SetActive(false);
-            //add 1 to golden egg count
-            //disable this collectable
         }
         if (gameObject.CompareTag("EasterEgg"))
         {
-            GameManager.AddEasterEgg(); //give the function a number that represents the easter egg's type
+            GameManager.AddEasterEgg();
             gameObject.SetActive(false);
         }
     }

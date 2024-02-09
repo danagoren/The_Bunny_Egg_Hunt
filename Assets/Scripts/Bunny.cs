@@ -32,13 +32,13 @@ public class Bunny : MonoBehaviour
         Vector2 bunnyPos = (Vector2)gameObject.transform.position;
         Vector2 mousePos = Vector2.zero;
 
-        //if bunney reached its destination - stop.
-        if ((Math.Abs(target.x - bunnyPos.x) < 0.2) && (Math.Abs(target.y - bunnyPos.y) < 0.2))
+        //if bunny reached its destination - stop.
+        if ((Math.Abs(target.x - bunnyPos.x) < 0.1) && (Math.Abs(target.y - bunnyPos.y) < 0.1))
         {
             RB.velocity = Vector2.zero;
         }
 
-        //if player clicks on screan - bunney moves towards where the player clicked.
+        //if player clicks on screen - bunny moves towards where the player clicked.
         if (Input.GetMouseButtonDown(0))
         {
             mousePos = AdjustPos(Camera.main.ScreenToWorldPoint(Input.mousePosition));
@@ -51,6 +51,7 @@ public class Bunny : MonoBehaviour
         return target;
     }
 
+    //adjusts position: this function is needed to bring the bunny's legs to the target instead of its belly
     Vector2 AdjustPos (Vector2 Pos)
     {
         Pos.y += 1.4f;
