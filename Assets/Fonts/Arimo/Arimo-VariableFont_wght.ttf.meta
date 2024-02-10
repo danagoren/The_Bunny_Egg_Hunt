@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 4776ee75797dd914ab02d9162c3dcdd2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Arimo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a5bce7aa536b5444fb628d0f79bc2b68, type: 3}
+  - {fileID: 12800000, guid: e276ceef2267ff24098228c88d0778d7, type: 3}
+  - {fileID: 12800000, guid: b696e6dc6eeca594fb2b493d5071ac08, type: 3}
+  - {fileID: 12800000, guid: b31bccc04381e394093e6a49ab998300, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
