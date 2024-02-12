@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,11 +14,14 @@ public class GameManager : MonoBehaviour
     static string extraZero = "";
     static string timerStr = "";
     bool timerOn = false;
-    //public Text TimerText;
+    public TextMeshProUGUI TimerNum;
     public static int goldenEggs = 0;
+    public TextMeshProUGUI GoldenEggs;
     public static int easterEggs = 0;
+    public TextMeshProUGUI EasterEggs;
     static public int easterEggsNeeded;
-    
+    public TextMeshProUGUI EasterEggsNeeded;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,10 @@ public class GameManager : MonoBehaviour
             PlayerLost();
         }
         PrintTester();
+        GoldenEggs.text = goldenEggs.ToString();
+        EasterEggs.text = easterEggs.ToString() + "/";
+        EasterEggsNeeded.text = easterEggsNeeded.ToString();
+
     }
 
     static public void AddGoldenEgg()
@@ -52,7 +60,6 @@ public class GameManager : MonoBehaviour
 
         easterEggs++;
         AddXP("Easter Egg");
-        easterEggsNeeded--;
     }
     static public void AddXP(string action)
     {
@@ -92,11 +99,12 @@ public class GameManager : MonoBehaviour
             extraZero = "";
         }
         timerStr = (timerMinutes.ToString() + ":" + extraZero + timerSeconds.ToString());
+        TimerNum.text = timerStr;
     }
 
     bool CheckIfWon()
     {
-        if (easterEggsNeeded <= 0)
+        if (easterEggsNeeded == easterEggs)
         {
             timerOn = false;
             return true;
