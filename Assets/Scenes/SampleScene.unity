@@ -510,7 +510,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea486f604482df94e830963fddfa541a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  XPText: {fileID: 1831767153}
+  Level: {fileID: 1897945808}
   TimerNum: {fileID: 1294838328}
+  TimerNumRed: {fileID: 349304466}
   GoldenEggs: {fileID: 1293906841}
   EasterEggs: {fileID: 1686125040}
   EasterEggsNeeded: {fileID: 779686826}
@@ -2596,13 +2599,13 @@ RectTransform:
   m_Children:
   - {fileID: 732890217}
   - {fileID: 1294838327}
+  - {fileID: 349304465}
   - {fileID: 1387625763}
   - {fileID: 668404233}
   - {fileID: 264281798}
   - {fileID: 1831767152}
   - {fileID: 2093845364}
   - {fileID: 1897945807}
-  - {fileID: 349304465}
   m_Father: {fileID: 993396381}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3410,7 +3413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fd9f6b27024e13946a5c4595009cfb0c, type: 2}
   m_sharedMaterial: {fileID: 4348597226455439843, guid: fd9f6b27024e13946a5c4595009cfb0c, type: 2}

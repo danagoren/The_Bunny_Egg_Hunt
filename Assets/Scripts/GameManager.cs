@@ -7,7 +7,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     static int XP = 0;
-    static int level = 0;
+    public TextMeshProUGUI XPText;
+    static int level = 1;
+    public TextMeshProUGUI Level;
     static float timer; //in seconds
     static int timerMinutes;
     static int timerSeconds;
@@ -27,9 +29,18 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         timerOn = true;
-        timer = 70;
-        easterEggsNeeded = 5;
         TimerNumRed.enabled = false;
+        timer = 70;
+        XP = 0;
+        XPText.text = XP.ToString();
+        level = 1;
+        Level.text = level.ToString();
+        goldenEggs = 0;
+        GoldenEggs.text = goldenEggs.ToString();
+        easterEggs = 0;
+        EasterEggs.text = easterEggs.ToString() + "/";
+        easterEggsNeeded = 5;
+        EasterEggsNeeded.text = easterEggsNeeded.ToString();
     }
 
     // Update is called once per frame
@@ -48,6 +59,8 @@ public class GameManager : MonoBehaviour
         GoldenEggs.text = goldenEggs.ToString();
         EasterEggs.text = easterEggs.ToString() + "/";
         EasterEggsNeeded.text = easterEggsNeeded.ToString();
+        XPText.text = XP.ToString();
+        Level.text = level.ToString();
 
     }
 
@@ -73,7 +86,7 @@ public class GameManager : MonoBehaviour
         {
             XP += 5;
         }
-        level = (int)(XP / 10);
+        level = 1+(int)(XP / 10);
     }
 
     void UpdateTimer()
