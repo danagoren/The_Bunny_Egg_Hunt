@@ -9,17 +9,19 @@ public class Bunny : MonoBehaviour
     private Rigidbody2D RB;
     private float speed = 5.0f;
     private static Vector2 target = Vector2.zero;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        target = Movement(target);
+        Movement();
     }
 
     void OnMouseDown()
@@ -27,7 +29,7 @@ public class Bunny : MonoBehaviour
 
     }
 
-    Vector2 Movement(Vector2 target)
+    void Movement()
     {
         Vector2 bunnyPos = (Vector2)gameObject.transform.position;
         Vector2 mousePos = Vector2.zero;
@@ -47,14 +49,59 @@ public class Bunny : MonoBehaviour
             target = mousePos;
         }
 
+        float moveDirectionH = Input.GetAxis("Horizontal");
+        float moveDirectionV = Input.GetAxis("Vertical");
+        Vector3 direction = RB.velocity;
+
+        if (direction.x == 0 && direction.y == 0)
+        {
+            animator.SetBool("WalkRight", false);
+            animator.SetBool("WalkLeft", false);
+            animator.SetBool("WalkFront", false);
+            animator.SetBool("WalkBack", false);
+            return;
+        }
+        if (direction.x > Math.Abs(direction.y))
+        {
+            animator.SetBool("WalkRight", true);
+            animator.SetBool("WalkLeft", false);
+            animator.SetBool("WalkFront", false);
+            animator.SetBool("WalkBack", false);
+            Debug.Log("right");
+            return;
+        }
+        if ((-direction.x) > Math.Abs(direction.y))
+        {
+            animator.SetBool("WalkRight", false);
+            animator.SetBool("WalkLeft", true);
+            animator.SetBool("WalkFront", false);
+            animator.SetBool("WalkBack", false);
+            return;
+        }
+        if (direction.y < 0)
+        {
+            animator.SetBool("WalkRight", false);
+            animator.SetBool("WalkLeft", false);
+            animator.SetBool("WalkFront", true);
+            animator.SetBool("WalkBack", false);
+            return;
+        }
+        if (direction.y > 0)
+        {
+            animator.SetBool("WalkRight", false);
+            animator.SetBool("WalkLeft", false);
+            animator.SetBool("WalkFront", false);
+            animator.SetBool("WalkBack", true);
+            return;
+        }
+
         //Debug.Log("bunnyPos = " + bunnyPos + ", mousePos = " + mousePos + ", target = " + target);
-        return target;
     }
 
     //adjusts position: this function is needed to bring the bunny's legs to the target instead of its belly
     Vector2 AdjustPos (Vector2 Pos)
     {
-        Pos.y += 1.4f;
+        Pos.y += 1f;
         return Pos;
     }
 }

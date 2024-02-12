@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerLost();
         }
-        PrintTester();
+        //PrintTester();
         GoldenEggs.text = goldenEggs.ToString();
         EasterEggs.text = easterEggs.ToString() + "/";
         EasterEggsNeeded.text = easterEggsNeeded.ToString();
