@@ -67,7 +67,6 @@ public class Bunny : MonoBehaviour
             animator.SetBool("WalkLeft", false);
             animator.SetBool("WalkFront", false);
             animator.SetBool("WalkBack", false);
-            Debug.Log("right");
             return;
         }
         if ((-direction.x) > Math.Abs(direction.y))
