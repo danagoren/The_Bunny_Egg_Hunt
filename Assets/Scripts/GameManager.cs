@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     static string timerStr = "";
     bool timerOn = false;
     public TextMeshProUGUI TimerNum;
+    public TextMeshProUGUI TimerNumRed;
     public static int goldenEggs = 0;
     public TextMeshProUGUI GoldenEggs;
     public static int easterEggs = 0;
@@ -26,8 +27,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         timerOn = true;
-        timer = 600;
+        timer = 70;
         easterEggsNeeded = 5;
+        TimerNumRed.enabled = false;
     }
 
     // Update is called once per frame
@@ -100,6 +102,12 @@ public class GameManager : MonoBehaviour
         }
         timerStr = (timerMinutes.ToString() + ":" + extraZero + timerSeconds.ToString());
         TimerNum.text = timerStr;
+        TimerNumRed.text = timerStr;
+        if (timer < 60)
+        {
+            TimerNumRed.enabled = true;
+            TimerNum.enabled = false;
+        }
     }
 
     bool CheckIfWon()
