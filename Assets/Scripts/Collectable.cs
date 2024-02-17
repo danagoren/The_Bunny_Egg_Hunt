@@ -6,6 +6,7 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
     private Rigidbody2D RB;
+    [SerializeField] AudioSource audioCollect;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +26,13 @@ public class Collectable : MonoBehaviour
         if (gameObject.CompareTag("GoldenEgg"))
         {
             GameManager.AddGoldenEgg();
+            audioCollect.Play();
             gameObject.SetActive(false);
         }
         if (gameObject.CompareTag("EasterEgg"))
         {
             GameManager.AddEasterEgg();
+            audioCollect.Play();
             gameObject.SetActive(false);
         }
     }

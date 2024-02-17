@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI EasterEggs;
     static public int easterEggsNeeded;
     public TextMeshProUGUI EasterEggsNeeded;
+    public GameObject youWin;
+    public GameObject youLose;
 
     // Start is called before the first frame update
     void Start()
@@ -136,6 +138,7 @@ public class GameManager : MonoBehaviour
     void PlayerWon()
     {
         //print winning message
+        youWin.SetActive(true);
     }
 
     bool CheckIfLost()
@@ -153,6 +156,8 @@ public class GameManager : MonoBehaviour
     void PlayerLost()
     {
         //print lost message
+        youLose.SetActive(true);
+
     }
 
     static void PrintTester()
