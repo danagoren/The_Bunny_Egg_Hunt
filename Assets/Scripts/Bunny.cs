@@ -24,15 +24,11 @@ public class Bunny : MonoBehaviour
         Movement();
     }
 
-    void OnMouseDown()
-    {
-
-    }
-
     void Movement()
     {
         Vector2 bunnyPos = (Vector2)gameObject.transform.position;
-        Vector2 mousePos = Vector2.zero;
+        Vector2 mousePosWorld = Vector2.zero;
+        Vector2 mousePosScreen = Vector2.zero;
 
         //if bunny reached its destination - stop.
         if ((Math.Abs(target.x - bunnyPos.x) < 0.1) && (Math.Abs(target.y - bunnyPos.y) < 0.1))
@@ -43,16 +39,50 @@ public class Bunny : MonoBehaviour
         //if player clicks on screen - bunny moves towards where the player clicked.
         if (Input.GetMouseButtonDown(0))
         {
-            mousePos = AdjustPos(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            mousePosScreen = Input.mousePosition;
+            mousePosWorld = AdjustPos(Camera.main.ScreenToWorldPoint(mousePosScreen));
+            //Debug.Log("mousePosScreen: " + mousePosScreen + ", mousePosWorld: " + mousePosWorld);
+            if (!IsWalkable(mousePosScreen, mousePosWorld)) //check if the player clicked over the panel / borders
+            {
+                return;
+            }
             bunnyPos = (Vector2)gameObject.transform.position;
-            RB.velocity = (mousePos - bunnyPos).normalized * speed;
-            target = mousePos;
+            RB.velocity = (mousePosWorld - bunnyPos).normalized * speed;
+            target = mousePosWorld;
         }
 
-        float moveDirectionH = Input.GetAxis("Horizontal");
-        float moveDirectionV = Input.GetAxis("Vertical");
-        Vector3 direction = RB.velocity;
+        AnimatorPositions(RB.velocity); //setting bools for the animations
+        //Debug.Log("bunnyPos = " + bunnyPos + ", mousePos = " + mousePos + ", target = " + target);
+    }
 
+    //adjust the position to bring the bunny's legs to the target instead of its belly
+    Vector2 AdjustPos (Vector2 Pos)
+    {
+        Pos.y += 1f;
+        return Pos;
+    }
+
+    //check if the player clicked over the panel / borders
+    bool IsWalkable(Vector2 mousePosScreen, Vector2 mousePosWorld)
+    {
+        if (mousePosScreen.y >= 791f) //if crossed the panel
+        {
+            return false;
+        }
+        if (mousePosWorld.y <= -9.7) //if crossed bottom border
+        {
+            return false;
+        }
+        if (mousePosWorld.x >= 12 || mousePosWorld.x <= -15.1) //if crossed side borders
+        {
+            return false;
+        }
+        return true;
+    }
+
+    //setting bools for the animations
+    void AnimatorPositions (Vector3 direction)
+    {
         if (direction.x == 0 && direction.y == 0)
         {
             animator.SetBool("WalkRight", false);
@@ -93,14 +123,5 @@ public class Bunny : MonoBehaviour
             animator.SetBool("WalkBack", true);
             return;
         }
-
-        //Debug.Log("bunnyPos = " + bunnyPos + ", mousePos = " + mousePos + ", target = " + target);
-    }
-
-    //adjusts position: this function is needed to bring the bunny's legs to the target instead of its belly
-    Vector2 AdjustPos (Vector2 Pos)
-    {
-        Pos.y += 1f;
-        return Pos;
     }
 }
