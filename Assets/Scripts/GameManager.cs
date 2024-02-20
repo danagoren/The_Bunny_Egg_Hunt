@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+    //public GameObject Bunny;
     static int XP = 0;
     public TextMeshProUGUI XPText;
     static int level = 1;
@@ -26,6 +28,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI EasterEggsNeeded;
     public GameObject youWin;
     public GameObject youLose;
+
+    private void Awake()
+    {
+        Instance = this;
+        //DontDestroyOnLoad(gameObject);
+
+    }
 
     // Start is called before the first frame update
     void Start()

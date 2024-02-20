@@ -229,6 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7101527082248905275}
+  - component: {fileID: 8595041014643415561}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -257,6 +258,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8595041014643415561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8548177712943400526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea486f604482df94e830963fddfa541a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XPText: {fileID: 0}
+  Level: {fileID: 0}
+  TimerNum: {fileID: 0}
+  TimerNumRed: {fileID: 0}
+  GoldenEggs: {fileID: 0}
+  EasterEggs: {fileID: 0}
+  EasterEggsNeeded: {fileID: 0}
+  youWin: {fileID: 0}
+  youLose: {fileID: 0}
 --- !u!1 &9121857993764106322
 GameObject:
   m_ObjectHideFlags: 0

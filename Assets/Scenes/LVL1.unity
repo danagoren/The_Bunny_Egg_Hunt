@@ -348,7 +348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125951891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.045144, y: -14.004055, z: 0.9107775}
+  m_LocalPosition: {x: 4.045144, y: -14.004055, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -522,7 +522,6 @@ GameObject:
   - component: {fileID: 199855359}
   - component: {fileID: 199855362}
   - component: {fileID: 199855364}
-  - component: {fileID: 199855365}
   - component: {fileID: 199855366}
   m_Layer: 0
   m_Name: Bunny
@@ -682,27 +681,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0506172, y: 2.9438617}
   m_EdgeRadius: 0
---- !u!114 &199855365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199855358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea486f604482df94e830963fddfa541a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  XPText: {fileID: 1831767153}
-  Level: {fileID: 1897945808}
-  TimerNum: {fileID: 1294838328}
-  TimerNumRed: {fileID: 349304466}
-  GoldenEggs: {fileID: 1293906841}
-  EasterEggs: {fileID: 1686125040}
-  EasterEggsNeeded: {fileID: 779686826}
-  youWin: {fileID: 1930615491}
-  youLose: {fileID: 331638655}
 --- !u!95 &199855366
 Animator:
   serializedVersion: 5
@@ -3320,7 +3298,7 @@ GameObject:
   - component: {fileID: 680257792}
   - component: {fileID: 680257791}
   m_Layer: 0
-  m_Name: carret
+  m_Name: carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4368,7 +4346,7 @@ GameObject:
   - component: {fileID: 1192114915}
   - component: {fileID: 1192114914}
   m_Layer: 0
-  m_Name: carret (1)
+  m_Name: carrot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8014,6 +7992,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
+      propertyPath: Bunny
+      value: 
+      objectReference: {fileID: 199855358}
+    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 1897945808}
+    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
+      propertyPath: XPText
+      value: 
+      objectReference: {fileID: 1831767153}
+    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
+      propertyPath: youWin
+      value: 
+      objectReference: {fileID: 1930615491}
+    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
+      propertyPath: youLose
+      value: 
+      objectReference: {fileID: 331638655}
+    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
+      propertyPath: TimerNum
+      value: 
+      objectReference: {fileID: 1294838328}
+    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
+      propertyPath: EasterEggs
+      value: 
+      objectReference: {fileID: 1686125040}
+    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
+      propertyPath: GoldenEggs
+      value: 
+      objectReference: {fileID: 1293906841}
+    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
+      propertyPath: TimerNumRed
+      value: 
+      objectReference: {fileID: 349304466}
+    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
+      propertyPath: EasterEggsNeeded
+      value: 
+      objectReference: {fileID: 779686826}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
