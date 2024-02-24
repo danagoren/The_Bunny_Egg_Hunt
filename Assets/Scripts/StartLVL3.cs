@@ -8,7 +8,7 @@ public class StartLVL3 : MonoBehaviour
 
     public void Next()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SceneManager.LoadScene(3);
     }
 
 }
