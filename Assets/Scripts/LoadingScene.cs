@@ -5,26 +5,19 @@ using UnityEngine;
 
 public class LoadingScene : MonoBehaviour
 {
-    public string loading;
-    public string nextScene;
+    public float delay = 5f;
 
     void Start()
     {
-        // Load the second scene
-        SceneManager.LoadScene(loading, LoadSceneMode.Additive);
-
-        // Wait for 5 seconds
-        StartCoroutine(WaitAndLoadThirdScene());
+        // Start the coroutine to disable the object after 'delay' seconds
+        StartCoroutine(DisableObjectAfterDelay());
     }
 
-    IEnumerator WaitAndLoadThirdScene()
+    IEnumerator DisableObjectAfterDelay()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(delay);
 
-        // Unload the second scene
-        SceneManager.UnloadSceneAsync(loading);
-
-        // Load the third scene
-        SceneManager.LoadScene(nextScene, LoadSceneMode.Additive);
+        // Disable the object
+        gameObject.SetActive(false);
     }
 }
