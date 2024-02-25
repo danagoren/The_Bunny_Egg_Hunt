@@ -4237,6 +4237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loading
       objectReference: {fileID: 0}
+    - target: {fileID: 2546085324527847137, guid: 4767c1fa31a752a419f288dece448806, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3770962053750527586, guid: 4767c1fa31a752a419f288dece448806, type: 3}
       propertyPath: m_SizeDelta.x
       value: 120.4912
@@ -16545,7 +16549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b9141f765ced3443bae67a8655d2404, type: 2}
   m_sharedMaterial: {fileID: -9118827389345473269, guid: 3b9141f765ced3443bae67a8655d2404, type: 2}
