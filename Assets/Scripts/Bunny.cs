@@ -73,7 +73,7 @@ public class Bunny : MonoBehaviour
         {
             return false;
         }
-        if (mousePosWorld.x >= 12 || mousePosWorld.x <= -15.1) //if crossed side borders
+       if (mousePosWorld.x >= 12 || mousePosWorld.x <= -15.1) //if crossed side borders
         {
             return false;
         }
