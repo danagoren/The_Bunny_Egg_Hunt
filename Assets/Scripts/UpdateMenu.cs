@@ -9,12 +9,10 @@ public class UpdateMenu : MonoBehaviour
     public TextMeshProUGUI Level;
     public TextMeshProUGUI XP;
     public TextMeshProUGUI GoldenEggs;
-    /*static int level = 1;
-    static int XPNum = 0;
-    public static int goldenEggs = 0;*/
+    public GameObject AstroLock;
+    public GameObject RockLock;
+    public GameObject Lock3;
     static int flag = 0;
-
-
 
 
     // Start is called before the first frame update
@@ -35,5 +33,23 @@ public class UpdateMenu : MonoBehaviour
         Level.text = PlayerPrefs.GetInt("Level").ToString();
         XP.text = PlayerPrefs.GetInt("XP").ToString();
         GoldenEggs.text = PlayerPrefs.GetInt("GoldenEggs").ToString();
+        OpenLocks();
+    }
+
+    //open locks for the outfits
+    void OpenLocks()
+    {
+        if (PlayerPrefs.GetInt("Level") >= 2)
+        {
+            AstroLock.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("Level") >= 4)
+        {
+            RockLock.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("Level") >= 6)
+        {
+            Lock3.SetActive(false);
+        }
     }
 }
