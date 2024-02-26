@@ -10,6 +10,7 @@ public class Food : MonoBehaviour
 {
     public int goldenEggsCost = 10;
     public Button foodButton;
+    public GameObject restock;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class Food : MonoBehaviour
             GameManager.AddXP("Zero");
 
             gameObject.SetActive(false);
+            restock.SetActive(true);
         }
         else
         {
