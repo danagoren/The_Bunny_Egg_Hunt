@@ -1524,14 +1524,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
-      propertyPath: Level
-      value: 
-      objectReference: {fileID: 1076254184}
-    - target: {fileID: 8595041014643415561, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
-      propertyPath: XPText
-      value: 
-      objectReference: {fileID: 872213887}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3727,6 +3719,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581618501}
   m_CullTransparentMesh: 1
+--- !u!1 &606683985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 606683987}
+  - component: {fileID: 606683986}
+  m_Layer: 0
+  m_Name: UpdateMenuVals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &606683986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606683985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8debd1dbac800243bcffa183cd9723f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: {fileID: 1076254184}
+  XP: {fileID: 872213887}
+  GoldenEggs: {fileID: 990668406}
+--- !u!4 &606683987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606683985}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 377.1138, y: -166.6835, z: -11.995345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &666383704
 GameObject:
   m_ObjectHideFlags: 0
@@ -9116,8 +9155,8 @@ RectTransform:
   - {fileID: 438827118}
   - {fileID: 422839983}
   - {fileID: 442356533}
-  - {fileID: 358289083}
   - {fileID: 2037515932}
+  - {fileID: 358289083}
   - {fileID: 853303641}
   m_Father: {fileID: 0}
   m_RootOrder: 1
