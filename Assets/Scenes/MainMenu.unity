@@ -703,8 +703,9 @@ GameObject:
   - component: {fileID: 71125099}
   - component: {fileID: 71125098}
   - component: {fileID: 71125097}
+  - component: {fileID: 71125100}
   m_Layer: 5
-  m_Name: carrotsnackpack
+  m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -825,6 +826,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71125095}
   m_CullTransparentMesh: 1
+--- !u!114 &71125100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71125095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ca699fd11bf8849a8aacccc92eab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldenEggsCost: 1
+  foodButton: {fileID: 71125097}
 --- !u!1 &92017932
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,8 +852,9 @@ GameObject:
   - component: {fileID: 92017936}
   - component: {fileID: 92017935}
   - component: {fileID: 92017934}
+  - component: {fileID: 92017937}
   m_Layer: 5
-  m_Name: carrotcookie
+  m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -959,6 +975,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92017932}
   m_CullTransparentMesh: 1
+--- !u!114 &92017937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92017932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ca699fd11bf8849a8aacccc92eab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldenEggsCost: 4
+  foodButton: {fileID: 92017934}
 --- !u!1 &95703887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4486,8 +4516,9 @@ GameObject:
   - component: {fileID: 840639977}
   - component: {fileID: 840639976}
   - component: {fileID: 840639975}
+  - component: {fileID: 840639978}
   m_Layer: 5
-  m_Name: blueberrydrink
+  m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4608,6 +4639,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840639973}
   m_CullTransparentMesh: 1
+--- !u!114 &840639978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840639973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ca699fd11bf8849a8aacccc92eab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldenEggsCost: 1
+  foodButton: {fileID: 840639975}
 --- !u!1 &853303640
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,8 +4878,9 @@ GameObject:
   - component: {fileID: 879929192}
   - component: {fileID: 879929191}
   - component: {fileID: 879929190}
+  - component: {fileID: 879929193}
   m_Layer: 5
-  m_Name: Strawberrystick
+  m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4955,6 +5001,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879929188}
   m_CullTransparentMesh: 1
+--- !u!114 &879929193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879929188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ca699fd11bf8849a8aacccc92eab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldenEggsCost: 1
+  foodButton: {fileID: 879929190}
 --- !u!1 &908787637
 GameObject:
   m_ObjectHideFlags: 0
@@ -5176,8 +5236,9 @@ GameObject:
   - component: {fileID: 978655511}
   - component: {fileID: 978655510}
   - component: {fileID: 978655509}
+  - component: {fileID: 978655512}
   m_Layer: 5
-  m_Name: strawberrydonut
+  m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5298,6 +5359,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978655507}
   m_CullTransparentMesh: 1
+--- !u!114 &978655512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978655507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ca699fd11bf8849a8aacccc92eab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldenEggsCost: 2
+  foodButton: {fileID: 978655509}
 --- !u!1 &978725102
 GameObject:
   m_ObjectHideFlags: 0
@@ -7263,8 +7338,9 @@ GameObject:
   - component: {fileID: 1401927757}
   - component: {fileID: 1401927756}
   - component: {fileID: 1401927755}
+  - component: {fileID: 1401927758}
   m_Layer: 5
-  m_Name: carrothsake
+  m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7385,6 +7461,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401927753}
   m_CullTransparentMesh: 1
+--- !u!114 &1401927758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401927753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ca699fd11bf8849a8aacccc92eab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldenEggsCost: 2
+  foodButton: {fileID: 1401927755}
 --- !u!1 &1469960983
 GameObject:
   m_ObjectHideFlags: 0
@@ -7631,8 +7721,9 @@ GameObject:
   - component: {fileID: 1591572983}
   - component: {fileID: 1591572982}
   - component: {fileID: 1591572981}
+  - component: {fileID: 1591572984}
   m_Layer: 5
-  m_Name: Blueberry cake
+  m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7753,6 +7844,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591572979}
   m_CullTransparentMesh: 1
+--- !u!114 &1591572984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591572979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ca699fd11bf8849a8aacccc92eab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldenEggsCost: 4
+  foodButton: {fileID: 1591572981}
 --- !u!1 &1628235071
 GameObject:
   m_ObjectHideFlags: 0
@@ -8634,8 +8739,9 @@ GameObject:
   - component: {fileID: 1764699336}
   - component: {fileID: 1764699335}
   - component: {fileID: 1764699334}
+  - component: {fileID: 1764699337}
   m_Layer: 5
-  m_Name: BlueBerry icecream
+  m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8756,6 +8862,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764699332}
   m_CullTransparentMesh: 1
+--- !u!114 &1764699337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764699332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ca699fd11bf8849a8aacccc92eab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldenEggsCost: 2
+  foodButton: {fileID: 1764699334}
 --- !u!114 &1810372398 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5615753329011492708, guid: 58392944e4f49f546bdcc1e0824f134d, type: 3}
@@ -8857,7 +8977,7 @@ GameObject:
   - component: {fileID: 1844729615}
   - component: {fileID: 1844729618}
   m_Layer: 5
-  m_Name: strawberrycheese
+  m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8990,6 +9110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ca699fd11bf8849a8aacccc92eab93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldenEggsCost: 4
+  foodButton: {fileID: 1844729615}
 --- !u!1 &1882035432
 GameObject:
   m_ObjectHideFlags: 0
