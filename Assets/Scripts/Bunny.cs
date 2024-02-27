@@ -83,6 +83,15 @@ public class Bunny : MonoBehaviour
     //setting bools for the animations
     void AnimatorPositions (Vector3 direction)
     {
+        if (PlayerPrefs.GetInt("Astro") == 1)
+        {
+            animator.SetBool("Astro", true);
+        }
+        else
+        {
+            animator.SetBool("Astro", false);
+        }
+
         if (direction.x == 0 && direction.y == 0)
         {
             animator.SetBool("WalkRight", false);

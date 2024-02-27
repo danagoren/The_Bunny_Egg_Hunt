@@ -12,6 +12,8 @@ public class UpdateMenu : MonoBehaviour
     public GameObject AstroLock;
     public GameObject RockLock;
     public GameObject Lock3;
+    public GameObject astroSkin;
+    public GameObject bunnySkin;
     static int flag = 0;
 
 
@@ -23,6 +25,7 @@ public class UpdateMenu : MonoBehaviour
             PlayerPrefs.SetInt("Level", 1);
             PlayerPrefs.SetInt("XP", 0);
             PlayerPrefs.SetInt("GoldenEggs", 0);
+            PlayerPrefs.SetInt("Astro", 0);
             flag++;
         }
     }
@@ -34,6 +37,7 @@ public class UpdateMenu : MonoBehaviour
         XP.text = PlayerPrefs.GetInt("XP").ToString();
         GoldenEggs.text = PlayerPrefs.GetInt("GoldenEggs").ToString();
         OpenLocks();
+        UpdateSkin();
     }
 
     //open locks for the outfits
@@ -50,6 +54,28 @@ public class UpdateMenu : MonoBehaviour
         if (PlayerPrefs.GetInt("Level") >= 6)
         {
             Lock3.SetActive(false);
+        }
+    }
+
+    public void UpdateSkin()
+    {
+        if (PlayerPrefs.GetInt("Astro") == 1)
+        {
+            astroSkin.SetActive(true);
+            bunnySkin.SetActive(false);
+        }
+        Debug.Log("astro state: " + PlayerPrefs.GetInt("Astro"));
+    }
+
+    public void SetSkin(int val)
+    {
+        if (val == 0)
+        {
+            PlayerPrefs.SetInt("Astro", 0);
+        }
+        if (val == 1)
+        {
+            PlayerPrefs.SetInt("Astro", 1);
         }
     }
 }
