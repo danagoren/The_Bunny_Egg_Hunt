@@ -83,6 +83,7 @@ public class Bunny : MonoBehaviour
     //setting bools for the animations
     void AnimatorPositions (Vector3 direction)
     {
+        //PlayerPrefs.SetInt("Astro", 1); //for testing
         if (PlayerPrefs.GetInt("Astro") == 1)
         {
             animator.SetBool("Astro", true);
@@ -106,6 +107,10 @@ public class Bunny : MonoBehaviour
             animator.SetBool("WalkLeft", false);
             animator.SetBool("WalkFront", false);
             animator.SetBool("WalkBack", false);
+            /*if (PlayerPrefs.GetInt("Astro") == 1)
+            {
+                gameObject.transform.localScale = new Vector3(-0.6f, 0.55f, 1);
+            }*/
             return;
         }
         if ((-direction.x) > Math.Abs(direction.y))
@@ -114,6 +119,10 @@ public class Bunny : MonoBehaviour
             animator.SetBool("WalkLeft", true);
             animator.SetBool("WalkFront", false);
             animator.SetBool("WalkBack", false);
+            /*if (PlayerPrefs.GetInt("Astro") == 1)
+            {
+                gameObject.transform.localScale = new Vector3(0.6f, 0.55f, 1);
+            }*/
             return;
         }
         if (direction.y < 0)

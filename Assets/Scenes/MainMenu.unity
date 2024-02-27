@@ -5082,7 +5082,7 @@ MonoBehaviour:
   XP: {fileID: 872213887}
   GoldenEggs: {fileID: 990668406}
   AstroLock: {fileID: 1375712000}
-  RockLock: {fileID: 1864637385}
+  RockerLock: {fileID: 1864637385}
   Lock3: {fileID: 0}
   astroSkin: {fileID: 438835460}
   bunnySkin: {fileID: 580652490}
@@ -9007,6 +9007,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 606683986}
+        m_TargetAssemblyTypeName: UpdateMenu, Assembly-CSharp
+        m_MethodName: SetSkin
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1

@@ -10,10 +10,11 @@ public class UpdateMenu : MonoBehaviour
     public TextMeshProUGUI XP;
     public TextMeshProUGUI GoldenEggs;
     public GameObject AstroLock;
-    public GameObject RockLock;
+    public GameObject RockerLock;
     public GameObject Lock3;
     public GameObject astroSkin;
     public GameObject bunnySkin;
+    public GameObject rockerSkin;
     static int flag = 0;
 
 
@@ -26,6 +27,7 @@ public class UpdateMenu : MonoBehaviour
             PlayerPrefs.SetInt("XP", 0);
             PlayerPrefs.SetInt("GoldenEggs", 0);
             PlayerPrefs.SetInt("Astro", 0);
+            PlayerPrefs.SetInt("Rocker", 0);
             flag++;
         }
     }
@@ -49,7 +51,7 @@ public class UpdateMenu : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("Level") >= 4)
         {
-            RockLock.SetActive(false);
+            RockerLock.SetActive(false);
         }
         if (PlayerPrefs.GetInt("Level") >= 6)
         {
@@ -63,6 +65,13 @@ public class UpdateMenu : MonoBehaviour
         {
             astroSkin.SetActive(true);
             bunnySkin.SetActive(false);
+            rockerSkin.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("Rocker") == 1)
+        {
+            astroSkin.SetActive(false);
+            bunnySkin.SetActive(false);
+            rockerSkin.SetActive(true);
         }
         Debug.Log("astro state: " + PlayerPrefs.GetInt("Astro"));
     }
@@ -72,10 +81,17 @@ public class UpdateMenu : MonoBehaviour
         if (val == 0)
         {
             PlayerPrefs.SetInt("Astro", 0);
+            PlayerPrefs.SetInt("Rocker", 0);
         }
         if (val == 1)
         {
             PlayerPrefs.SetInt("Astro", 1);
+            PlayerPrefs.SetInt("Rocker", 0);
+        }
+        if (val == 2)
+        {
+            PlayerPrefs.SetInt("Rocker", 1);
+            PlayerPrefs.SetInt("Astro", 0);
         }
     }
 }
