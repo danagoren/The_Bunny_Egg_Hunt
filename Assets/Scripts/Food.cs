@@ -40,11 +40,19 @@ public class Food : MonoBehaviour
 
     int XPValue()
     {
-        if (gameObject.name == "food")
+        if (gameObject.name == "food(1)")
         {
             return 1;
         }
-       
+        if (gameObject.name == "food(2)")
+        {
+            return 3;
+        }
+        if (gameObject.name == "food(4)")
+        {
+            return 7;
+        }
+
         return 0;
     }
 

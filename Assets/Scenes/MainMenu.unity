@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 71125097}
   - component: {fileID: 71125100}
   m_Layer: 5
-  m_Name: food
+  m_Name: food(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,7 +1003,7 @@ GameObject:
   - component: {fileID: 92017934}
   - component: {fileID: 92017937}
   m_Layer: 5
-  m_Name: food
+  m_Name: food(4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4399,7 +4399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &438827118
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7215,7 +7215,7 @@ GameObject:
   - component: {fileID: 840639975}
   - component: {fileID: 840639978}
   m_Layer: 5
-  m_Name: food
+  m_Name: food(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7656,7 +7656,7 @@ GameObject:
   - component: {fileID: 879929190}
   - component: {fileID: 879929193}
   m_Layer: 5
-  m_Name: food
+  m_Name: food(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8379,7 +8379,7 @@ GameObject:
   - component: {fileID: 978655509}
   - component: {fileID: 978655512}
   m_Layer: 5
-  m_Name: food
+  m_Name: food(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11534,7 +11534,7 @@ GameObject:
   - component: {fileID: 1401927755}
   - component: {fileID: 1401927758}
   m_Layer: 5
-  m_Name: food
+  m_Name: food(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12441,7 +12441,7 @@ GameObject:
   - component: {fileID: 1591572981}
   - component: {fileID: 1591572984}
   m_Layer: 5
-  m_Name: food
+  m_Name: food(4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13826,7 +13826,7 @@ GameObject:
   - component: {fileID: 1764699334}
   - component: {fileID: 1764699337}
   m_Layer: 5
-  m_Name: food
+  m_Name: food(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14471,7 +14471,7 @@ GameObject:
   - component: {fileID: 1844729615}
   - component: {fileID: 1844729618}
   m_Layer: 5
-  m_Name: food
+  m_Name: food(4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
