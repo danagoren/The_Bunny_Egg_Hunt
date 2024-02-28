@@ -6,25 +6,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
-    public GameObject Bunny;
-    public TextMeshProUGUI XPText;
-    public TextMeshProUGUI Level;
+    [SerializeField] static GameManager Instance;
+    [SerializeField] GameObject Bunny;
+    [SerializeField] TextMeshProUGUI XPText;
+    [SerializeField] TextMeshProUGUI Level;
+    [SerializeField] TextMeshProUGUI TimerNum;
+    [SerializeField] TextMeshProUGUI TimerNumRed;
+    [SerializeField] TextMeshProUGUI GoldenEggs;
+    [SerializeField] static int easterEggs = 0;
+    [SerializeField] TextMeshProUGUI EasterEggs;
+    [SerializeField] static int easterEggsNeeded;
+    [SerializeField] TextMeshProUGUI EasterEggsNeeded;
+    [SerializeField] GameObject youWin;
+    [SerializeField] GameObject youLose;
     static float timer; //in seconds
     static int timerMinutes;
     static int timerSeconds;
     static string extraZero = "";
     static string timerStr = "";
     bool timerOn = false;
-    public TextMeshProUGUI TimerNum;
-    public TextMeshProUGUI TimerNumRed;
-    public TextMeshProUGUI GoldenEggs;
-    public static int easterEggs = 0;
-    public TextMeshProUGUI EasterEggs;
-    static public int easterEggsNeeded;
-    public TextMeshProUGUI EasterEggsNeeded;
-    public GameObject youWin;
-    public GameObject youLose;
 
     // Start is called before the first frame update
     void Start()
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Level", 1 +(int)(PlayerPrefs.GetInt("XP") / 10));
     }
 
-    void UpdateTimer()
+    private void UpdateTimer()
     {
         if (timerOn)
         {
@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    bool CheckIfWon()
+    private bool CheckIfWon()
     {
         if (easterEggsNeeded == easterEggs)
         {
@@ -129,13 +129,13 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    void PlayerWon()
+    private void PlayerWon()
     {
         //print winning message
         youWin.SetActive(true);
     }
 
-    bool CheckIfLost()
+    private bool CheckIfLost()
     {
         if (timerOn)
         {
@@ -147,14 +147,14 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    void PlayerLost()
+    private void PlayerLost()
     {
         //print lost message
         youLose.SetActive(true);
 
     }
 
-    void SetEasterEggs()
+    private void SetEasterEggs()
     {
         if (PlayerPrefs.GetInt("GameLevel") == 1)
         {
@@ -170,3 +170,4 @@ public class GameManager : MonoBehaviour
         }
     }
 }
+

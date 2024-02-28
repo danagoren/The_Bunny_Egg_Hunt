@@ -6,16 +6,16 @@ using static Cinemachine.DocumentationSortingAttribute;
 
 public class UpdateMenu : MonoBehaviour
 {
-    public TextMeshProUGUI Level;
-    public TextMeshProUGUI XP;
-    public TextMeshProUGUI GoldenEggs;
-    public GameObject AstroLock;
-    public GameObject RockerLock;
-    public GameObject RainLock;
-    public GameObject astroSkin;
-    public GameObject bunnySkin;
-    public GameObject rockerSkin;
-    public GameObject rainSkin;
+    [SerializeField] TextMeshProUGUI Level;
+    [SerializeField] TextMeshProUGUI XP;
+    [SerializeField] TextMeshProUGUI GoldenEggs;
+    [SerializeField] GameObject AstroLock;
+    [SerializeField] GameObject RockerLock;
+    [SerializeField] GameObject RainLock;
+    [SerializeField] GameObject astroSkin;
+    [SerializeField] GameObject bunnySkin;
+    [SerializeField] GameObject rockerSkin;
+    [SerializeField] GameObject rainSkin;
     static int flag = 0;
 
 
@@ -45,7 +45,7 @@ public class UpdateMenu : MonoBehaviour
     }
 
     //open locks for the outfits
-    void OpenLocks()
+    private void OpenLocks()
     {
         if (PlayerPrefs.GetInt("Level") >= 2)
         {
@@ -61,7 +61,7 @@ public class UpdateMenu : MonoBehaviour
         }
     }
 
-    public void UpdateSkin()
+    private void UpdateSkin()
     {
         if (PlayerPrefs.GetInt("Astro") == 1)
         {
@@ -84,7 +84,6 @@ public class UpdateMenu : MonoBehaviour
             rockerSkin.SetActive(false);
             rainSkin.SetActive(true);
         }
-        Debug.Log("astro state: " + PlayerPrefs.GetInt("Astro"));
     }
 
     public void SetSkin(int val)
