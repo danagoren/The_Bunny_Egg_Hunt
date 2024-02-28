@@ -11,10 +11,11 @@ public class UpdateMenu : MonoBehaviour
     public TextMeshProUGUI GoldenEggs;
     public GameObject AstroLock;
     public GameObject RockerLock;
-    public GameObject Lock3;
+    public GameObject RainLock;
     public GameObject astroSkin;
     public GameObject bunnySkin;
     public GameObject rockerSkin;
+    public GameObject rainSkin;
     static int flag = 0;
 
 
@@ -28,6 +29,7 @@ public class UpdateMenu : MonoBehaviour
             PlayerPrefs.SetInt("GoldenEggs", 0);
             PlayerPrefs.SetInt("Astro", 0);
             PlayerPrefs.SetInt("Rocker", 0);
+            PlayerPrefs.SetInt("Rain", 0);
             flag++;
         }
     }
@@ -40,6 +42,7 @@ public class UpdateMenu : MonoBehaviour
         GoldenEggs.text = PlayerPrefs.GetInt("GoldenEggs").ToString();
         OpenLocks();
         UpdateSkin();
+        SetSkin(2); //for testing
     }
 
     //open locks for the outfits
@@ -55,7 +58,7 @@ public class UpdateMenu : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("Level") >= 6)
         {
-            Lock3.SetActive(false);
+            RainLock.SetActive(false);
         }
     }
 
@@ -66,12 +69,21 @@ public class UpdateMenu : MonoBehaviour
             astroSkin.SetActive(true);
             bunnySkin.SetActive(false);
             rockerSkin.SetActive(false);
+            rainSkin.SetActive(false);
         }
         if (PlayerPrefs.GetInt("Rocker") == 1)
         {
             astroSkin.SetActive(false);
             bunnySkin.SetActive(false);
             rockerSkin.SetActive(true);
+            rainSkin.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("Rain") == 1)
+        {
+            astroSkin.SetActive(false);
+            bunnySkin.SetActive(false);
+            rockerSkin.SetActive(false);
+            rainSkin.SetActive(true);
         }
         Debug.Log("astro state: " + PlayerPrefs.GetInt("Astro"));
     }
@@ -82,16 +94,25 @@ public class UpdateMenu : MonoBehaviour
         {
             PlayerPrefs.SetInt("Astro", 0);
             PlayerPrefs.SetInt("Rocker", 0);
+            PlayerPrefs.SetInt("Rain", 0);
         }
         if (val == 1)
         {
             PlayerPrefs.SetInt("Astro", 1);
             PlayerPrefs.SetInt("Rocker", 0);
+            PlayerPrefs.SetInt("Rain", 0);
         }
         if (val == 2)
         {
-            PlayerPrefs.SetInt("Rocker", 1);
             PlayerPrefs.SetInt("Astro", 0);
+            PlayerPrefs.SetInt("Rocker", 1);
+            PlayerPrefs.SetInt("Rain", 0);
+        }
+        if (val == 3)
+        {
+            PlayerPrefs.SetInt("Astro", 0);
+            PlayerPrefs.SetInt("Rocker", 0);
+            PlayerPrefs.SetInt("Rain", 1);
         }
     }
 }

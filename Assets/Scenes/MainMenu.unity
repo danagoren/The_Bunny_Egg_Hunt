@@ -5451,10 +5451,11 @@ MonoBehaviour:
   GoldenEggs: {fileID: 990668406}
   AstroLock: {fileID: 1375712000}
   RockerLock: {fileID: 1864637385}
-  Lock3: {fileID: 0}
+  RainLock: {fileID: 971766168}
   astroSkin: {fileID: 438835460}
   bunnySkin: {fileID: 580652490}
-  rockerSkin: {fileID: 0}
+  rockerSkin: {fileID: 1423905006}
+  rainSkin: {fileID: 409632283}
 --- !u!4 &606683987
 Transform:
   m_ObjectHideFlags: 0

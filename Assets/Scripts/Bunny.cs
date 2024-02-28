@@ -56,7 +56,7 @@ public class Bunny : MonoBehaviour
     }
 
     //adjust the position to bring the bunny's legs to the target instead of its belly
-    Vector2 AdjustPos (Vector2 Pos)
+    Vector2 AdjustPos(Vector2 Pos)
     {
         Pos.y += 1f;
         return Pos;
@@ -81,7 +81,7 @@ public class Bunny : MonoBehaviour
     }
 
     //setting bools for the animations
-    void AnimatorPositions (Vector3 direction)
+    void AnimatorPositions(Vector3 direction)
     {
         //PlayerPrefs.SetInt("Astro", 1); //for testing
         if (PlayerPrefs.GetInt("Astro") == 1)
@@ -91,6 +91,22 @@ public class Bunny : MonoBehaviour
         else
         {
             animator.SetBool("Astro", false);
+        }
+        if (PlayerPrefs.GetInt("Rocker") == 1)
+        {
+            animator.SetBool("Rocker", true);
+        }
+        else
+        {
+            animator.SetBool("Rocker", false);
+        }
+        if (PlayerPrefs.GetInt("Rain") == 1)
+        {
+            animator.SetBool("Rain", true);
+        }
+        else
+        {
+            animator.SetBool("Rain", false);
         }
 
         if (direction.x == 0 && direction.y == 0)
