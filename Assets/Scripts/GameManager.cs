@@ -8,9 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject Bunny;
-    //static int XP = 0;
     public TextMeshProUGUI XPText;
-    //static int level = 1;
     public TextMeshProUGUI Level;
     static float timer; //in seconds
     static int timerMinutes;
@@ -20,7 +18,6 @@ public class GameManager : MonoBehaviour
     bool timerOn = false;
     public TextMeshProUGUI TimerNum;
     public TextMeshProUGUI TimerNumRed;
-    //public static int goldenEggs = 0;
     public TextMeshProUGUI GoldenEggs;
     public static int easterEggs = 0;
     public TextMeshProUGUI EasterEggs;
@@ -29,32 +26,19 @@ public class GameManager : MonoBehaviour
     public GameObject youWin;
     public GameObject youLose;
 
-    /*private void Awake()
-    {
-        Instance = this;
-        //DontDestroyOnLoad(gameObject);
-
-    }*/
-
     // Start is called before the first frame update
     void Start()
     {
         timerOn = true;
         TimerNumRed.enabled = false;
-        timer = 70;
-        //XP = 0;
+        timer = 185;
         XPText.text = PlayerPrefs.GetInt("XP").ToString();
-        //level = 1;
         Level.text = PlayerPrefs.GetInt("Level").ToString();
-        //goldenEggs = 0;
         GoldenEggs.text = PlayerPrefs.GetInt("GoldenEggs").ToString();
         easterEggs = 0;
         EasterEggs.text = easterEggs.ToString() + "/";
         easterEggsNeeded = 5;
         EasterEggsNeeded.text = easterEggsNeeded.ToString();
-        /*PlayerPrefs.SetInt("goldenEggs", goldenEggs);
-        PlayerPrefs.SetInt("Level", level);
-        PlayerPrefs.SetInt("XP", XP);*/
     }
 
     // Update is called once per frame
@@ -69,17 +53,11 @@ public class GameManager : MonoBehaviour
         {
             PlayerLost();
         }
-        //PrintTester();
         GoldenEggs.text = PlayerPrefs.GetInt("GoldenEggs").ToString(); 
         EasterEggs.text = easterEggs.ToString() + "/";
         EasterEggsNeeded.text = easterEggsNeeded.ToString();
         XPText.text = PlayerPrefs.GetInt("XP").ToString();
         Level.text = PlayerPrefs.GetInt("Level").ToString();
-        //PlayerPrefs.SetInt("easterEggs", easterEggs);
-        //goldenEggs = PlayerPrefs.GetInt("goldenEggs");
-        //level = PlayerPrefs.GetInt("Level");
-        //XP = PlayerPrefs.GetInt("XP");
-
     }
 
     static public void AddGoldenEgg()
@@ -91,7 +69,6 @@ public class GameManager : MonoBehaviour
     static public void AddEasterEgg()
     {
         easterEggs++;
-        //PlayerPrefs.SetInt("easterEggs", ++easterEggs);
         AddXP("Easter Egg");
     }
     static public void AddXP(string action)
@@ -176,10 +153,5 @@ public class GameManager : MonoBehaviour
         //print lost message
         youLose.SetActive(true);
 
-    }
-
-    static void PrintTester()
-    {
-        //Debug.Log("Golden Eggs: " + goldenEggs + ", Easter Eggs: " + easterEggs + ", XP: " + XP + ", Level: " + level + ", timer: " + timerStr);
     }
 }

@@ -42,7 +42,6 @@ public class UpdateMenu : MonoBehaviour
         GoldenEggs.text = PlayerPrefs.GetInt("GoldenEggs").ToString();
         OpenLocks();
         UpdateSkin();
-        SetSkin(3); //for testing
     }
 
     //open locks for the outfits
