@@ -114,4 +114,21 @@ public class UpdateMenu : MonoBehaviour
             PlayerPrefs.SetInt("Rain", 1);
         }
     }
+
+    public void SetGameLevel(int level)
+    {
+        if (level == 1)
+        {
+            PlayerPrefs.SetInt("GameLevel", 1);
+        }
+        if (level == 2)
+        {
+            PlayerPrefs.SetInt("GameLevel", 2);
+        }
+        if (level == 3)
+        {
+            PlayerPrefs.SetInt("GameLevel", 3);
+        }
+
+    }
 }

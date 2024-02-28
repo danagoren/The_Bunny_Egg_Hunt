@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         easterEggs = 0;
         EasterEggs.text = easterEggs.ToString() + "/";
         easterEggsNeeded = 5;
+        SetEasterEggs();
         EasterEggsNeeded.text = easterEggsNeeded.ToString();
     }
 
@@ -82,8 +83,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("XP", PlayerPrefs.GetInt("XP") + 5);
         }
         PlayerPrefs.SetInt("Level", 1 +(int)(PlayerPrefs.GetInt("XP") / 10));
-        //PlayerPrefs.SetInt("XP", XP);
-        //PlayerPrefs.SetInt("Level", level);
     }
 
     void UpdateTimer()
@@ -153,5 +152,21 @@ public class GameManager : MonoBehaviour
         //print lost message
         youLose.SetActive(true);
 
+    }
+
+    void SetEasterEggs()
+    {
+        if (PlayerPrefs.GetInt("GameLevel") == 1)
+        {
+            easterEggsNeeded = 5;
+        }
+        if (PlayerPrefs.GetInt("GameLevel") == 2)
+        {
+            easterEggsNeeded = 6;
+        }
+        if (PlayerPrefs.GetInt("GameLevel") == 3)
+        {
+            easterEggsNeeded = 8;
+        }
     }
 }
