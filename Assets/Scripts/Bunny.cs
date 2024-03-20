@@ -1,9 +1,4 @@
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-using Terresquall;
-
+using UnityEngine;
 
 public class Bunny : MonoBehaviour
 {
@@ -11,29 +6,27 @@ public class Bunny : MonoBehaviour
     public AudioClip moveSound;
     public AudioSource audioSource;
 
-    private static Vector2 target = Vector2.zero;
     Animator animator;
+    Vector2 joystickInput;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Movement();
-    }
-
-    void Movement()
-    {
-        // Read input from the virtual joystick
-        float horizontalInput = VirtualJoystick.GetAxis("Horizontal");
-        float verticalInput = VirtualJoystick.GetAxis("Vertical");
+        // Get joystick input from the OnScreenJoystick
+        joystickInput = FindObjectOfType<OnScreenJoystick>().JoystickInput;
 
         // Move the bunny/player
-        Vector3 movement = new Vector3(horizontalInput, verticalInput, 0f);
+        Move();
+    }
+
+    void Move()
+    {
+        // Move the bunny/player
+        Vector3 movement = new Vector3(joystickInput.x, joystickInput.y, 0f);
         transform.Translate(movement * moveSpeed * Time.deltaTime, Space.World);
 
         // If there is movement, play the sound
@@ -52,11 +45,10 @@ public class Bunny : MonoBehaviour
         }
 
         // Set animator parameters based on movement direction
-        AnimatorPositions(movement);
+        SetAnimatorPositions(movement);
     }
 
-    // Setting bools for the animations
-    void AnimatorPositions(Vector3 direction)
+    void SetAnimatorPositions(Vector3 direction)
     {
         if (direction.x == 0 && direction.y == 0)
         {
@@ -67,40 +59,40 @@ public class Bunny : MonoBehaviour
             return;
         }
 
-        if (direction.x > Math.Abs(direction.y))
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
-            animator.SetBool("WalkRight", true);
-            animator.SetBool("WalkLeft", false);
-            animator.SetBool("WalkFront", false);
-            animator.SetBool("WalkBack", false);
-            return;
+            if (direction.x > 0)
+            {
+                animator.SetBool("WalkRight", true);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkFront", false);
+                animator.SetBool("WalkBack", false);
+            }
+            else
+            {
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", true);
+                animator.SetBool("WalkFront", false);
+                animator.SetBool("WalkBack", false);
+            }
         }
-
-        if ((-direction.x) > Math.Abs(direction.y))
+        else
         {
-            animator.SetBool("WalkRight", false);
-            animator.SetBool("WalkLeft", true);
-            animator.SetBool("WalkFront", false);
-            animator.SetBool("WalkBack", false);
-            return;
-        }
-
-        if (direction.y < 0)
-        {
-            animator.SetBool("WalkRight", false);
-            animator.SetBool("WalkLeft", false);
-            animator.SetBool("WalkFront", true);
-            animator.SetBool("WalkBack", false);
-            return;
-        }
-
-        if (direction.y > 0)
-        {
-            animator.SetBool("WalkRight", false);
-            animator.SetBool("WalkLeft", false);
-            animator.SetBool("WalkFront", false);
-            animator.SetBool("WalkBack", true);
-            return;
+            if (direction.y > 0)
+            {
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkFront", false);
+                animator.SetBool("WalkBack", true);
+            }
+            else
+            {
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkFront", true);
+                animator.SetBool("WalkBack", false);
+            }
         }
     }
+
 }
