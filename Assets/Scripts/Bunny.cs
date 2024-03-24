@@ -50,16 +50,20 @@ public class Bunny : MonoBehaviour
 
     void SetAnimatorPositions(Vector3 direction)
     {
+        // Check and set animation states based on PlayerPrefs values
+        animator.SetBool("Astro", PlayerPrefs.GetInt("Astro") == 1);
+        animator.SetBool("Rocker", PlayerPrefs.GetInt("Rocker") == 1);
+        animator.SetBool("Rain", PlayerPrefs.GetInt("Rain") == 1);
+
+        // Check directional movement and set corresponding animations
         if (direction.x == 0 && direction.y == 0)
         {
             animator.SetBool("WalkRight", false);
             animator.SetBool("WalkLeft", false);
             animator.SetBool("WalkFront", false);
             animator.SetBool("WalkBack", false);
-            return;
         }
-
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        else if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
             {
@@ -94,5 +98,4 @@ public class Bunny : MonoBehaviour
             }
         }
     }
-
 }
